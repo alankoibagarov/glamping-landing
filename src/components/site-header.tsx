@@ -74,7 +74,7 @@ export function SiteHeader() {
           >
             <a href="#stays">View stays</a>
           </Button>
-          <Button asChild size="sm" className="rounded-full px-4 text-xs shadow-sm">
+          <Button asChild size="sm" className="rounded-full px-4 text-xs shadow-sm text-white bg-emerald-500">
             <a href="#cta">Check availability</a>
           </Button>
         </div>
