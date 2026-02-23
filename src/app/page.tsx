@@ -15,13 +15,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
-
-const navItems = [
-  { href: "#about", label: "About" },
-  { href: "#stays", label: "Stays" },
-  { href: "#experience", label: "Experience" },
-  { href: "#faq", label: "FAQ" },
-] as const
+import { SiteHeader } from "@/components/site-header"
 
 const stays = [
   {
@@ -73,7 +67,7 @@ const faqs = [
 export default function Home() {
   return (
     <div className="flex min-h-screen flex-col bg-gradient-to-b from-background to-muted">
-      <Header />
+      <SiteHeader />
       <main className="flex-1">
         <HeroSection />
         <AboutSection />
@@ -86,61 +80,11 @@ export default function Home() {
   )
 }
 
-function Header() {
-  return (
-    <header className="sticky top-0 z-40 border-b bg-background/80 backdrop-blur">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
-        <a href="#top" className="flex items-center gap-2">
-          <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-primary/10 text-primary">
-            <MoonStar className="h-4 w-4" />
-          </span>
-          <div className="flex flex-col leading-tight">
-            <span className="text-sm font-semibold tracking-tight">
-              Aurora Glamping
-            </span>
-            <span className="text-xs text-muted-foreground">
-              Stay under a brighter sky
-            </span>
-          </div>
-        </a>
-        <nav className="hidden items-center gap-6 text-sm font-medium md:flex">
-          {navItems.map((item) => (
-            <a
-              key={item.href}
-              href={item.href}
-              className="text-muted-foreground transition-colors hover:text-foreground"
-            >
-              {item.label}
-            </a>
-          ))}
-        </nav>
-        <div className="flex items-center gap-2">
-          <Button
-            asChild
-            size="sm"
-            variant="outline"
-            className="hidden rounded-full px-4 text-xs md:inline-flex"
-          >
-            <a href="#stays">View stays</a>
-          </Button>
-          <Button
-            asChild
-            size="sm"
-            className="rounded-full px-4 text-xs shadow-sm"
-          >
-            <a href="#cta">Check availability</a>
-          </Button>
-        </div>
-      </div>
-    </header>
-  )
-}
-
 function HeroSection() {
   return (
     <section
       id="top"
-      className="relative overflow-hidden border-b bg-[url('/hero-image.png')] bg-cover bg-center bg-no-repeat bg-blend-multiply bg-primary/50 h-[100dvh]"
+      className="relative overflow-hidden bg-[url('/hero-image.png')] bg-cover bg-center bg-no-repeat bg-blend-multiply bg-primary/50 h-[100dvh]"
     >
       <div className="pointer-events-none absolute inset-x-0 -top-32 -z-10 h-72 bg-[radial-gradient(circle_at_top,_rgba(251,244,199,0.45)_0,_transparent_60%)] opacity-80" />
       <div className="mx-auto flex max-w-6xl flex-col gap-12 px-4 pb-16 pt-12 sm:px-6 sm:pt-16 lg:flex-row lg:items-center lg:pb-24 lg:pt-20">
