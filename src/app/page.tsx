@@ -84,7 +84,7 @@ function HeroSection() {
   return (
     <section
       id="top"
-      className="relative overflow-hidden bg-[url('/hero-image.png')] bg-cover bg-center bg-no-repeat bg-blend-multiply bg-primary/50 h-[100dvh]"
+      className="relative flex items-center justify-center overflow-hidden bg-[url('/hero-image.png')] bg-cover bg-center bg-no-repeat bg-blend-multiply bg-primary/50 h-[100dvh]"
     >
       <div className="pointer-events-none absolute inset-x-0 -top-32 -z-10 h-72 bg-[radial-gradient(circle_at_top,_rgba(251,244,199,0.45)_0,_transparent_60%)] opacity-80" />
       <div className="mx-auto flex max-w-6xl flex-col gap-12 px-4 pb-16 pt-12 sm:px-6 sm:pt-16 lg:flex-row lg:items-center lg:pb-24 lg:pt-20">
@@ -110,7 +110,7 @@ function HeroSection() {
             <Button
               asChild
               size="lg"
-              className="rounded-full px-6 text-sm shadow-md shadow-primary/20 bg-emerald-500 hover:bg-emerald-600 text-white"
+              className="rounded-full px-6 text-sm shadow-md shadow-primary/20 bg-emerald-500 text-white"
               color="red"
             >
               <a href="#cta">Check dates & request stay</a>
@@ -119,7 +119,7 @@ function HeroSection() {
               asChild
               variant="ghost"
               size="lg"
-              className="rounded-full px-4 text-sm text-white"
+              className="rounded-full px-4 text-sm text-white hover:bg-white/30 hover:text-white"
             >
               <a href="#experience">Explore the experience</a>
             </Button>
@@ -187,7 +187,7 @@ function HeroSection() {
                   <Button
                     asChild
                     size="sm"
-                    className="rounded-full bg-emerald-500 hover:bg-emerald-600 text-white px-4 text-xs shadow-sm"
+                    className="rounded-full bg-emerald-500 text-white px-4 text-xs shadow-sm"
                   >
                     <a href="#cta">Request this stay</a>
                   </Button>
@@ -289,23 +289,23 @@ function StaysSection() {
   return (
     <section
       id="stays"
-      className="border-b bg-gradient-to-b from-background/80 to-muted/90 py-12 sm:py-16 lg:py-20"
+      className="border-b bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 py-12 sm:py-16 lg:py-20"
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div className="space-y-3">
-            <Badge className="rounded-full bg-primary/10 px-3 py-1 text-[11px] font-semibold tracking-[0.2em] text-primary">
+            <Badge className="rounded-full bg-white/10 px-3 py-1 text-[11px] font-semibold tracking-[0.2em] text-white">
               STAYS
             </Badge>
-            <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
+            <h2 className="text-2xl font-semibold tracking-tight text-white sm:text-3xl">
               Choose your way to sleep under the stars.
             </h2>
-            <p className="max-w-2xl text-sm text-muted-foreground sm:text-base">
+            <p className="max-w-2xl text-sm text-slate-100/80 sm:text-base">
               Each stay has its own character — from secluded treehouses in the canopy
               to riverfront domes with skylights for watching meteors dance overhead.
             </p>
           </div>
-          <div className="text-xs text-muted-foreground">
+          <div className="text-xs text-slate-100/80">
             Perfect for couples, small groups, and families seeking restorative time
             in nature.
           </div>
@@ -315,33 +315,33 @@ function StaysSection() {
           {stays.map((stay) => (
             <Card
               key={stay.name}
-              className="group flex h-full flex-col justify-between rounded-3xl border-border/70 bg-background/90 shadow-sm transition-transform hover:-translate-y-1 hover:shadow-lg"
+              className="group flex h-full flex-col justify-between rounded-3xl border-white/10 bg-white/5 shadow-sm transition-transform hover:-translate-y-1 hover:shadow-lg"
             >
               <CardHeader className="gap-2 pb-4">
                 <div className="flex items-center justify-between gap-3">
-                  <span className="inline-flex h-9 w-9 items-center justify-center rounded-2xl bg-primary/10 text-primary">
+                  <span className="inline-flex h-9 w-9 items-center justify-center rounded-2xl bg-emerald-500/15 text-emerald-300">
                     <stay.icon className="h-4 w-4" />
                   </span>
                   <Badge
                     variant="outline"
-                    className="rounded-full border-emerald-200 bg-emerald-50/60 text-[11px] font-medium text-emerald-700"
+                    className="rounded-full border-emerald-400/70 bg-emerald-500/15 text-[11px] font-medium text-emerald-100"
                   >
                     Limited availability
                   </Badge>
                 </div>
-                <CardTitle className="text-sm font-semibold tracking-tight">
+                <CardTitle className="text-sm font-semibold tracking-tight text-white">
                   {stay.name}
                 </CardTitle>
-                <CardDescription className="text-xs text-muted-foreground">
+                <CardDescription className="text-xs text-slate-100/80">
                   {stay.description}
                 </CardDescription>
               </CardHeader>
               <CardContent className="flex flex-1 flex-col justify-between space-y-4 pb-5">
-                <p className="text-xs text-muted-foreground">{stay.meta}</p>
+                <p className="text-xs text-slate-100/80">{stay.meta}</p>
                 <Button
                   asChild
                   size="sm"
-                  className="mt-2 w-full rounded-full bg-primary/90 text-xs shadow-sm group-hover:bg-primary"
+                  className="mt-2 w-full rounded-full bg-emerald-500 text-xs text-white shadow-sm group-hover:bg-emerald-400"
                 >
                   <a href="#cta">Check dates for this stay</a>
                 </Button>
@@ -352,21 +352,21 @@ function StaysSection() {
 
         <div
           id="cta"
-          className="mt-10 rounded-3xl border border-dashed border-primary/30 bg-primary/5 px-4 py-5 sm:px-6 sm:py-6 lg:px-8"
+          className="mt-10 rounded-3xl border border-dashed border-emerald-400/40 bg-emerald-500/10 px-4 py-5 sm:px-6 sm:py-6 lg:px-8"
         >
           <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
             <div className="space-y-1">
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-emerald-200">
                 Simple booking, personal reply
               </p>
-              <p className="text-sm text-muted-foreground sm:text-base">
+              <p className="text-sm text-emerald-50/90 sm:text-base">
                 Share your desired dates and group size. We’ll respond within 24 hours
                 with availability and a custom quote.
               </p>
             </div>
             <Button
               size="lg"
-              className="w-full rounded-full px-6 text-sm shadow-md shadow-primary/20 md:w-auto"
+              className="w-full rounded-full px-6 text-sm text-slate-950 shadow-md shadow-emerald-500/40 md:w-auto bg-emerald-400 hover:bg-emerald-300"
             >
               Send booking request
             </Button>
