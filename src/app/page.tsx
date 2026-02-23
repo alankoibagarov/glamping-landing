@@ -140,23 +140,23 @@ function HeroSection() {
   return (
     <section
       id="top"
-      className="relative overflow-hidden border-b bg-gradient-to-b from-background via-background to-background/60"
+      className="relative overflow-hidden border-b bg-[url('/hero-image.png')] bg-cover bg-center bg-no-repeat bg-blend-multiply bg-primary/50 h-[100dvh]"
     >
-      <div className="pointer-events-none absolute inset-x-0 -top-32 -z-10 h-72 bg-[radial-gradient(circle_at_top,_oklch(0.85_0.12_150)_0,_transparent_60%)] opacity-70" />
+      <div className="pointer-events-none absolute inset-x-0 -top-32 -z-10 h-72 bg-[radial-gradient(circle_at_top,_rgba(251,244,199,0.45)_0,_transparent_60%)] opacity-80" />
       <div className="mx-auto flex max-w-6xl flex-col gap-12 px-4 pb-16 pt-12 sm:px-6 sm:pt-16 lg:flex-row lg:items-center lg:pb-24 lg:pt-20">
         <div className="flex-1 space-y-6">
-          <div className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-3 py-1 text-xs font-medium text-primary">
+          <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-3 py-1 text-xs font-medium text-white">
             <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-primary/10">
               <Mountain className="h-3 w-3" />
             </span>
             Wilderness, without giving up comfort.
           </div>
           <div className="space-y-4">
-            <h1 className="text-balance text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl">
+            <h1 className="text-balance text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">
               Your boutique escape
-              <span className="block text-primary">between forest and sky.</span>
+              <span className="block text-white">between forest and sky.</span>
             </h1>
-            <p className="max-w-xl text-balance text-sm text-muted-foreground sm:text-base">
+            <p className="max-w-xl text-balance text-sm text-white/85 sm:text-base ">
               Wake up to birdsong, sip coffee on your private deck, and fall asleep
               under a sky full of stars. Aurora Glamping is a thoughtfully designed
               retreat for people who want nature, not noise.
@@ -166,7 +166,8 @@ function HeroSection() {
             <Button
               asChild
               size="lg"
-              className="rounded-full px-6 text-sm shadow-md shadow-primary/20"
+              className="rounded-full px-6 text-sm shadow-md shadow-primary/20 bg-emerald-500 hover:bg-emerald-600 text-white"
+              color="red"
             >
               <a href="#cta">Check dates & request stay</a>
             </Button>
@@ -174,14 +175,15 @@ function HeroSection() {
               asChild
               variant="ghost"
               size="lg"
-              className="rounded-full px-4 text-sm"
+              className="rounded-full px-4 text-sm text-white"
             >
               <a href="#experience">Explore the experience</a>
             </Button>
           </div>
-          <div className="flex flex-wrap items-center gap-4 text-xs text-muted-foreground">
+          <div className="flex flex-wrap items-center gap-4 text-xs text-white/85">
+            <span className="hidden h-4 w-px bg-border sm:inline-block" />
             <div className="flex items-center gap-2">
-              <Badge variant="outline" className="rounded-full border-emerald-200">
+              <Badge variant="outline" className="rounded-full border-emerald-500/80 border-2 text-white/85">
                 ★ 4.9 average rating
               </Badge>
               <span>Based on 300+ guest stays</span>
@@ -189,7 +191,7 @@ function HeroSection() {
             <span className="hidden h-4 w-px bg-border sm:inline-block" />
             <div className="flex flex-wrap gap-2">
               <span>2 hours from the city</span>
-              <span className="hidden text-xs text-muted-foreground/70 sm:inline">
+              <span className="hidden text-xs text-white/85 sm:inline">
                 • Sustainable materials • Low light pollution
               </span>
             </div>
@@ -241,7 +243,7 @@ function HeroSection() {
                   <Button
                     asChild
                     size="sm"
-                    className="rounded-full bg-primary px-4 text-xs shadow-sm"
+                    className="rounded-full bg-emerald-500 hover:bg-emerald-600 text-white px-4 text-xs shadow-sm"
                   >
                     <a href="#cta">Request this stay</a>
                   </Button>
