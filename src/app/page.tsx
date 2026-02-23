@@ -16,6 +16,7 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 import { SiteHeader } from "@/components/site-header"
+import Image from "next/image";
 
 const stays = [
   {
@@ -84,7 +85,7 @@ function HeroSection() {
   return (
     <section
       id="top"
-      className="relative flex items-center justify-center overflow-hidden bg-[url('/hero-image.png')] bg-cover bg-center bg-no-repeat bg-blend-multiply bg-primary/50 h-[100dvh]"
+      className="relative flex items-center justify-center overflow-hidden bg-[url('/hero-image.png')] bg-cover bg-center bg-no-repeat bg-blend-multiply bg-primary/50 min-h-[100dvh]"
     >
       <div className="pointer-events-none absolute inset-x-0 -top-32 -z-10 h-72 bg-[radial-gradient(circle_at_top,_rgba(251,244,199,0.45)_0,_transparent_60%)] opacity-80" />
       <div className="mx-auto flex max-w-6xl flex-col gap-12 px-4 pb-16 pt-12 sm:px-6 sm:pt-16 lg:flex-row lg:items-center lg:pb-24 lg:pt-20">
@@ -450,13 +451,13 @@ function TimelineItem(props: {
 }) {
   return (
     <div className="flex gap-3">
-      <div className="flex flex-col items-center pt-0.5">
+      <div className="flex flex-col flex-1 items-center pt-0.5">
         <span className="text-[11px] font-medium uppercase tracking-[0.16em] text-muted-foreground">
           {props.time}
         </span>
         <span className="mt-1 h-full w-px rounded-full bg-border" />
       </div>
-      <div className="space-y-1.5">
+      <div className="space-y-1.5 flex-3">
         <p className="text-xs font-medium text-foreground">{props.title}</p>
         <p>{props.description}</p>
       </div>
@@ -468,17 +469,17 @@ function FAQSection() {
   return (
     <section
       id="faq"
-      className="border-b bg-background/60 py-12 sm:py-16 lg:py-20"
+      className="border-b bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 py-12 sm:py-16 lg:py-20"
     >
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
         <div className="space-y-3 text-center">
-          <Badge className="mx-auto rounded-full bg-primary/10 px-3 py-1 text-[11px] font-semibold tracking-[0.2em] text-primary">
+          <Badge className="mx-auto rounded-full bg-white/10 px-3 py-1 text-[11px] font-semibold tracking-[0.2em] text-white">
             FAQ
           </Badge>
-          <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl">
+          <h2 className="text-2xl font-semibold tracking-tight sm:text-3xl text-white">
             Answers before you pack your bag.
           </h2>
-          <p className="text-sm text-muted-foreground sm:text-base">
+          <p className="text-sm sm:text-base text-slate-100/80">
             If you still have questions after reading these, send us a note — we&apos;re
             happy to help you plan your stay.
           </p>
@@ -487,10 +488,10 @@ function FAQSection() {
           <Accordion type="single" collapsible className="w-full">
             {faqs.map((item, index) => (
               <AccordionItem key={item.q} value={`item-${index + 1}`}>
-                <AccordionTrigger className="text-left text-sm font-medium">
+                <AccordionTrigger className="text-left text-sm font-medium text-white">
                   {item.q}
                 </AccordionTrigger>
-                <AccordionContent className="text-sm text-muted-foreground">
+                <AccordionContent className="text-sm text-slate-100/80">
                   {item.a}
                 </AccordionContent>
               </AccordionItem>
@@ -507,9 +508,7 @@ function Footer() {
     <footer className="border-t bg-background/90">
       <div className="mx-auto flex max-w-6xl flex-col gap-4 px-4 py-6 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
         <div className="flex items-center gap-2">
-          <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-primary/10 text-primary">
-            <MoonStar className="h-3 w-3" />
-          </span>
+            <Image src="/logo.png" alt="Aurora Glamping" width={32} height={32} />
           <span className="font-medium text-foreground">Aurora Glamping</span>
           <span className="hidden h-3 w-px bg-border sm:inline-block" />
           <span className="hidden text-xs sm:inline">
@@ -517,8 +516,6 @@ function Footer() {
           </span>
         </div>
         <div className="flex flex-wrap gap-3 text-[11px] sm:justify-end">
-          <span>Hand-built with Next.js, Tailwind, and shadcn/ui.</span>
-          <span className="hidden sm:inline">•</span>
           <span>Quiet hours from 22:00 – 07:00.</span>
         </div>
       </div>

@@ -5,6 +5,7 @@ import { MoonStar } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 const navItems = [
   { href: "#about", label: "About" },
@@ -43,9 +44,7 @@ export function SiteHeader() {
         )}
       >
         <a href="#top" className="flex items-center gap-2">
-          <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-primary/10 text-primary">
-            <MoonStar className="h-4 w-4" />
-          </span>
+          <Image src="/logo.png" alt="Aurora Glamping" width={50} height={50} />
           <div className="flex flex-col leading-tight">
             <span className="text-sm font-semibold tracking-tight">
               Aurora Glamping
