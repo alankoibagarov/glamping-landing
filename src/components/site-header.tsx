@@ -33,8 +33,8 @@ export function SiteHeader() {
   return (
     <header
       className={cn(
-        "fixed top-0 z-40 border-b bg-background/80 backdrop-blur transition-all duration-300 ease-out self-center max-w-full",
-        isScrolled ? "bg-background/90 shadow-sm w-6xl rounded-3xl" : "w-full",
+        "fixed top-0 z-40 border-b bg-background/70 backdrop-blur transition-all duration-300 ease-out self-center max-w-full",
+        isScrolled ? "shadow-sm w-6xl rounded-3xl" : "w-full",
       )}
     >
       <div
