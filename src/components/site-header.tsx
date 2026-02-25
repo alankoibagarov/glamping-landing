@@ -34,14 +34,11 @@ export function SiteHeader() {
     <header
       className={cn(
         "fixed top-0 z-40 border-b bg-background/70 backdrop-blur transition-all duration-300 ease-out self-center max-w-full",
-        isScrolled ? "shadow-sm w-6xl rounded-3xl" : "w-full",
+        isScrolled ? "shadow-sm rounded-3xl scale-80 w-full" : "w-full",
       )}
     >
       <div
-        className={cn(
-          "mx-auto flex max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8 transform-gpu origin-top transition-all duration-300 ease-out",
-          isScrolled ? "py-2 scale-90" : "py-3 scale-100",
-        )}
+        className="mx-auto flex max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8 transform-gpu origin-top transition-all duration-300 ease-out w-full"
       >
         <a href="#top" className="flex items-center gap-2">
           <Image src="/logo.png" alt="Aurora Glamping" width={50} height={50} />
